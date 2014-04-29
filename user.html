@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Create an Account</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/campgideon.css">
+</head>	
+
+<body>
+<header class="header">
+	<img id="header-image" width="5104" height="auto" title="Header" alt="" src="images/header.jpg">
+	<h1>Camp Gideon</h1>
+	<div>
+		<p id="countdown"></p>
+		<p id="countdownText">until summer camp starts!</p>
+	</div>
+</header>	
+<div class="page-body">
+	<div class="sidebar">
+		<h3>MENU</h3>
+		<ul class="sidebarlist">
+			<li id="about"><div>About Us</div>
+				<ul class="toggledList">
+					<li><a href="#"><div>Welcome</div></a></li>
+					<li><a href="#"><div>DAT STORY DABMAD</div></a></li>
+					<li><a href="#"><div>Mission</div></a></li>
+					<li><a href="#"><div>Staff</div></a></li>
+					<li><a href="#"><div>Facilities</div></a></li>
+					<li><a href="#"><div>Map</div></a></li>
+					<li><a href="#"><div>Testimonials</div></a></li>
+				</ul>
+			</li>
+			<li><div>Parents</div></li>
+			<li><div>Campers</div></li>
+			<li><div>Facility Rental</div></li>
+			<li><div>Contact</div></li>
+			<li><div>Forums</div></li>
+		</ul>
+	</div>
+	<div class="content">
+		<h1>Create an Account!</h1>
+		<p>Simply fill in the blanks, and you're good to go!</p>
+		<form id="newaccount" class="registration">
+			<fieldset name="name/date">
+				<legend>Tell us about yourself:</legend>
+				<div id="firstname" class="leftcol"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="First name" placeholder="First name"></input></div>
+				<div id="lastname" class="rightcol"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="Last name" placeholder="Last name"></input></div>
+				<div id="born" class="row"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="Date of Birth" placeholder="Date of Birth"></input></div>
+			</fieldset>
+			<fieldset name="location/contact">
+				<legend>Where are you from?</legend>			
+				<div id="street" class="row"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="Street Address" placeholder="Street Address"></input></div>
+				<div id="city" class="triple-col-left"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="City" placeholder="City"></input></div>
+				<div id="state" class="triple-col-mid"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="State" placeholder="State"></input></div>
+				<div id="zip" class="triple-col-right"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="Zip Code" placeholder="Zip Code"></input></div>
+				<div id="phone" class="row"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="Phone Number (Optional)" placeholder="Phone Number (Optional)"></input></div>
+				<div id="email" class="row"><input type="text" autocomplete="off" autocapitalize="off" autocorrect="off" title="Email Address" placeholder="Email Address"></input></div>
+			</fieldset>
+			<button name="Join Us!" type="submit" form="newaccount" formmethod="post">Join Us!</button>
+		</form>
+	</div>
+</div>
+<div class="contacts-wrapper">
+	<div class="contacts"><span style="font-size: 18px;">Contact Us!</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Office: 330-738-2074&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mailing Address: P.O. Box 115 Mechanicstown, OH 44651&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email: thecampgideon@gmail.com</div>
+</div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$("#about").click(function(){
+  $(".toggledList").toggle(200);
+});
+$("#header-image").attr("width", screen.width);
+
+// set the date we're counting down to
+var targetDate = new Date("June 1, 2014").getTime();
+ 
+// variables for time units
+var months, weeks, days, hours, minutes, seconds;
+
+// timer for updating countdown clock
+var timer = setInterval(function(){countdown()}, 1000);
+
+function countdown() {
+ 
+    // find the amount of "seconds" between now and target
+    var currentDate = new Date().getTime();
+	if (targetDate-currentDate <= 0) {
+		document.getElementById("countdown").innerHTML="summer camp is in session!";
+		document.getElementById("countdownText").innerHTML="";
+		timer.clearInterval();
+	}
+	else
+		var secondsLeft = (targetDate - currentDate) / 1000;
+
+	months = parseInt(secondsLeft / 2678400);
+	secondsLeft = secondsLeft % 2678400;
+	
+	weeks = parseInt(secondsLeft / 604800)
+	secondsLeft = secondsLeft % 604800;
+	
+    days = parseInt(secondsLeft / 86400);
+    secondsLeft = secondsLeft % 86400;
+     
+    hours = parseInt(secondsLeft / 3600);
+    secondsLeft = secondsLeft % 3600;
+     
+    minutes = parseInt(secondsLeft / 60);
+    seconds = parseInt(secondsLeft % 60);
+	 
+    // format countdown string + set tag value
+	
+    document.getElementById("countdown").innerHTML = months + "m, " + 
+	weeks + "w, " +days + "d, " + hours + "h, " + minutes + "m, " + 
+	seconds + "s";  
+ 	
+};
+
+// Initialize clock on page
+countdown();
+</script>

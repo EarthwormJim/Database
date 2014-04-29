@@ -1,0 +1,229 @@
+@font-face {
+    font-family: "Pretzel";
+    src: url("pretzel.ttf") format("truetype");
+}
+
+@media screen { 
+	.toggledList{ display:none; } 
+}
+
+body {
+	background-color: #336633;
+	background-image: url("wood.jpg");
+	background-attachment:fixed;
+	background-position: center top;
+	font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ------ Colors ------ */
+p, h1, h2, h3, h4, a {
+	color: white;
+}
+
+/* ---- More Colors ---- */
+.content, .contacts, .contacts-wrapper, .sidebar {
+	color: white;
+	background-color:#118A19;
+	border-color: white;
+}
+/* --- Round menus/shadow colors --- */
+.sidebar, .content {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	box-shadow: 0px 0px 5px 2px #173218;
+	-webkit-box-shadow: 0px 0px 5px 2px #173218;
+	-moz-box-shadow: 0px 0px 5px 2px #173218;
+}
+
+.header {
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 1%;
+	z-index: 200;
+}
+
+.header h1 {
+	position: absolute;
+	top: 70%;
+	left: 10%;
+	font-family: "Pretzel";
+	font-size: 60px;
+}
+
+.header div, .header div p{
+	width: 425px;
+	position: absolute;
+	bottom:0;
+	right: 0;
+	font-family: "Pretzel";
+}
+
+#countdown {
+	font-size: 30px;
+}
+
+.page-body {
+	width:900px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	position: relative;
+}
+
+.content {
+	width: 600px;
+	margin-left: 300px;
+	padding:15px;
+}
+
+.contacts-wrapper {
+	width: 100%;
+	border: none;
+	margin: 0px;
+	padding:0px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 199;
+	border-top: 1px solid white;
+}
+
+.contacts {
+	width: 75%;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Side navigation menu*/
+.sidebar {
+	float: left;
+	width: 275px;
+}
+
+.sidebar p, h3, h4 {
+	padding: 0 7px;
+}
+
+.sidebarlist {
+	cursor: pointer;
+}
+
+.sidebarlist li {
+	font-size: 14px;
+	list-style: none;
+}
+
+.sidebarlist a {
+	outline: none;
+	text-decoration: none;
+}
+
+.sidebarlist div {
+	font-size: 16px;
+	line-height: 100%;
+	width: 100%;
+	height: 100%;
+	padding: 3px 0;
+}
+
+.sidebarlist div:hover{
+	color: #67F540;
+}
+
+
+/* Registration form*/
+.registration fieldset {
+	margin-bottom: 10px;
+}
+
+.registration button {
+	padding:5px;
+	margin-top: 1em;
+	height: 35px;
+	background-color: #2319E0;
+	border: none;
+	color:white;
+	font-size: 20px;
+	text-decoration:none;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.registration button:hover {
+	background-color: #09CAE8;
+}
+
+.registration button:active{
+	box-shadow: 0 0 4px 2px #140BB8 inset;
+	-webkit-box-shadow: 0 0 4px 2px #140BB8 inset;
+	-moz-box-shadow: 0 0 4px 2px #140BB8 inset;
+	background-color: #09CAE8;
+}
+
+.row, .leftcol, .rightcol, .triple-col-left, .triple-col-mid, .triple-col-right {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 35px;
+	margin-top: 0.4em;
+	background-color: white;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.leftcol {
+	width: 49.7%;
+	float: left;
+}
+
+.rightcol {
+	width: 49.7%;
+	float: right;
+}
+
+.triple-col-left {
+	width: 33%;
+	float: left;
+}
+
+.triple-col-mid {
+	width: 33%;
+	margin-left: .5%;
+}
+
+.triple-col-right {
+	width: 33%;
+	float: right;
+}
+
+.row input:hover, .leftcol input:hover, .rightcol input:hover, 
+.triple-col-left input:hover, .triple-col-mid input:hover, 
+.triple-col-right input:hover  {
+	background-color:#94FDFF;
+}
+
+.row input:focus, .leftcol input:focus, .rightcol input:focus, 
+.triple-col-left input:focus , .triple-col-mid input:focus , 
+.triple-col-right input:focus  {
+	background-color:#FFC6A3;
+}
+
+ input {
+	position: absolute;
+	top:-1px;
+	border: none;
+	height:100%;
+	width:100%;
+	font-size: 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
